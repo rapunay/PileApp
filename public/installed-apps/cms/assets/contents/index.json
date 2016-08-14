@@ -1,0 +1,195 @@
+[
+    {
+    	"name": "group1",
+    	"type": "group",
+    	"value": [{
+				"name": "image-carousel",
+				"type": "carousel",
+				"value": ["assets/images/index/image1.jpg", "assets/images/index/image2.jpg", "assets/images/index/image3.jpg", "assets/images/index/image4.jpg", "assets/images/index/image5.jpg", "assets/images/index/image6.jpg"]
+			},{
+				"name": "company-logo",
+				"type": "image",
+				"value": "assets/images/index/logo.jpg"
+			},{
+				"name": "project-name",
+				"type": "text",
+				"value": "SUMMIT ESCAPE"
+			},{
+				"name": "heading1",
+				"type": "text",
+				"value": "summit escape"
+			},{
+				"name": "text1",
+				"type": "text",
+				"value": "Service offering for Clients"
+			},{
+				"name": "par1",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta. Fusce vel ultricies purus. In consectetur nibh odio, mattis varius purus faucibus in."
+			},{
+				"name": "image1",
+				"type": "image",
+				"value": "assets/images/index/image1.jpg"
+			},{
+				"name": "modal-heading1",
+				"type": "text",
+				"value": "Heading for Modal"
+			},{
+				"name": "modal-par1",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta. Fusce vel ultricies purus. In consectetur nibh odio, mattis varius purus faucibus in. Ut a dolor convallis, scelerisque leo eu, tincidunt eros. Vestibulum quis ullamcorper augue. Cras vitae mattis libero, et cursus neque. Sed tincidunt fermentum vehicula."
+			},{
+				"name": "g1-btn1",
+				"type": "button",
+				"value": "VISIT SITE"
+		}]
+    },{
+    	"name": "group2",
+    	"type": "group",
+    	"value": [{
+				"name": "image2",
+				"type": "image",
+				"value": "assets/images/index/image2.jpg"
+			},{
+				"name": "modal-heading2",
+				"type": "text",
+				"value": "Heading for Modal"
+			},{
+				"name": "modal-par2",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta. Fusce vel ultricies purus. In consectetur nibh odio, mattis varius purus faucibus in. Ut a dolor convallis, scelerisque leo eu, tincidunt eros. Vestibulum quis ullamcorper augue. Cras vitae mattis libero, et cursus neque. Sed tincidunt fermentum vehicula."
+			},{
+				"name": "heading2",
+				"type": "text",
+				"value": "blurb here"
+			},{
+				"name": "par2",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta."
+			},{
+				"name": "image3",
+				"type": "image",
+				"value": "assets/images/index/image3.jpg"
+			},{
+				"name": "modal-heading3",
+				"type": "text",
+				"value": "Heading for Modal"
+			},{
+				"name": "modal-par3",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta. Fusce vel ultricies purus. In consectetur nibh odio, mattis varius purus faucibus in. Ut a dolor convallis, scelerisque leo eu, tincidunt eros. Vestibulum quis ullamcorper augue. Cras vitae mattis libero, et cursus neque. Sed tincidunt fermentum vehicula."
+			},{
+				"name": "image4",
+				"type": "image",
+				"value": "assets/images/index/image4.jpg"
+			},{
+				"name": "modal-heading4",
+				"type": "text",
+				"value": "Heading for Modal"
+			},{
+				"name": "modal-par4",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta. Fusce vel ultricies purus. In consectetur nibh odio, mattis varius purus faucibus in. Ut a dolor convallis, scelerisque leo eu, tincidunt eros. Vestibulum quis ullamcorper augue. Cras vitae mattis libero, et cursus neque. Sed tincidunt fermentum vehicula."
+			},{
+				"name": "image5",
+				"type": "image",
+				"value": "assets/images/index/image5.jpg"
+			},{
+				"name": "modal-heading5",
+				"type": "text",
+				"value": "Heading for Modal"
+			},{
+				"name": "modal-par5",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta. Fusce vel ultricies purus. In consectetur nibh odio, mattis varius purus faucibus in. Ut a dolor convallis, scelerisque leo eu, tincidunt eros. Vestibulum quis ullamcorper augue. Cras vitae mattis libero, et cursus neque. Sed tincidunt fermentum vehicula."
+			},{
+				"name": "image6",
+				"type": "image",
+				"value": "assets/images/index/image6.jpg"
+			},{
+				"name": "modal-heading6",
+				"type": "text",
+				"value": "Heading for Modal"
+			},{
+				"name": "modal-par6",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta. Fusce vel ultricies purus. In consectetur nibh odio, mattis varius purus faucibus in. Ut a dolor convallis, scelerisque leo eu, tincidunt eros. Vestibulum quis ullamcorper augue. Cras vitae mattis libero, et cursus neque. Sed tincidunt fermentum vehicula."
+		}]
+    },{
+    	"name": "breakout-group",
+    	"type": "group",
+    	"value": [{
+				"name": "breakout-heading",
+				"type": "text",
+				"value": "breakout area"
+			},{
+				"name": "breakout-par",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta."
+		}]
+    },{
+    	"name": "group3",
+    	"type": "group",
+    	"value": [{
+				"name": "heading3",
+				"type": "text",
+				"value": "escape to the summit"
+			},{
+				"name": "image7",
+				"type": "image",
+				"value": "assets/images/index/image7.jpg"
+			},{
+				"name": "modal-heading7",
+				"type": "text",
+				"value": "Heading for Modal"
+			},{
+				"name": "modal-par7",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta. Fusce vel ultricies purus. In consectetur nibh odio, mattis varius purus faucibus in. Ut a dolor convallis, scelerisque leo eu, tincidunt eros. Vestibulum quis ullamcorper augue. Cras vitae mattis libero, et cursus neque. Sed tincidunt fermentum vehicula."
+			},{
+				"name": "heading4",
+				"type": "text",
+				"value": "another blurb here"
+			},{
+				"name": "par4",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue. Vivamus dignissim nisi vel mollis porta."
+			},{
+				"name": "image8",
+				"type": "image",
+				"value": "assets/images/index/image8.jpg"
+			},{
+				"name": "caption-heading1",
+				"type": "text",
+				"value": "image caption"
+			},{
+				"name": "caption-par1",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue."
+			},{
+				"name": "caption-heading2",
+				"type": "text",
+				"value": "image caption"
+			},{
+				"name": "caption-par2",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue."
+			},{
+				"name": "image9",
+				"type": "image",
+				"value": "assets/images/index/image9.jpg"
+			},{
+				"name": "image10",
+				"type": "image",
+				"value": "assets/images/index/image10.jpg"
+			},{
+				"name": "caption-heading3",
+				"type": "text",
+				"value": "image caption"
+			},{
+				"name": "caption-par3",
+				"type": "text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adispiscing elit. Nam hendreit ullamcorper dui et congue."
+		}]
+    }
+]

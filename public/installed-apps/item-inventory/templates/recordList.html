@@ -1,0 +1,43 @@
+<div class="icon-msg success" ng-show="mode.reqSuccess">{{appMsg}}</div>
+<span>Filter: <input type="text" ng-model="searchText"></span>
+<div id="record-list">
+	<div class="record" ng-repeat="item in itemList | orderBy:'id' | filter:searchText">
+		<span class="icon expand" toggle-class="active"></span>
+		<div class="record-title item-info single-line-text" title="{{item.id}} - {{item.name}}">{{item.id}} - {{item.name}}</div>
+		<span class="record-buttons">
+			<button class="icon remove-button" ng-click="toggleMode('remove', true, item)" title="Remove item"></button>
+			<button class="icon update-button" ng-click="toggleMode('update', true, item)" title="Update item"></button>
+		</span>
+		<div class="record-detail">
+			<div class="record-info">
+				<div>
+					<label class="single-line-text">Id</label>
+					<div class="item-info single-line-text" title="{{item.id}}">{{item.id}}</div>
+				</div>
+				<div>
+					<label class="single-line-text">Name</label>
+					<div class="item-info single-line-text" title="{{item.name}}">{{item.name}}</div>
+				</div>
+				<div>
+					<label class="single-line-text">Model</label>
+					<div class="item-info single-line-text" title="{{item.model}}">{{item.model}}</div>
+				</div>
+				<div>
+					<label class="single-line-text">Type</label>
+					<div class="item-info single-line-text" title="{{item.type}}">{{item.type}}</div>
+				</div>
+				<div>
+					<label class="single-line-text">Price</label>
+					<div class="item-info single-line-text" title="{{item.price}}">{{item.price}}</div>
+				</div>
+				<div>
+					<label class="single-line-text">Description</label>
+					<div class="item-info">{{item.description}}</div> 
+				</div>
+			</div>
+			<div class="record-image">
+				<img class="thumb" ng-show="item.image" ngf-thumbnail="item.imageData">
+			</div>
+		</div>
+	</div>
+</div>

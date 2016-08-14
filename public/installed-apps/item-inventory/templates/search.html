@@ -1,0 +1,34 @@
+<div id="search-panel" class="panel">
+	<legend class="panel-title center-align">Search Item</legend>
+	<div class="panel-content">	
+		<div class="msg-container">
+			<span class="icon-msg info" ng-show="mode.reqError">{{appMsg}}</span>
+		</div>
+		<fieldset class="field-group">
+			<div class="field-subgroup">
+				<legend class="panel-title">Fill-up search criteria</legend>
+				<div class="panel-content">					
+					<div class="field-container">
+						<label>Search by</label>
+						<select ng-init="searchCriteria.prop = searchOptions[0]" ng-model="searchCriteria.prop" ng-options="option for option in searchOptions"></select>
+					</div>
+
+					<div class="field-container">
+						<label>Value</label>
+						<input type="text" class="input-field" maxlength="30" required ng-model="searchCriteria.val" />
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		
+		<fieldset class="field-group center-align">
+			<input type="submit" value="Search" ng-click="findItem()" />
+		</fieldset>
+	</div>
+			
+	<div class="panel-content" ng-include="'templates/recordList.html'" ng-show="(itemList.length > 0)">
+	</div>
+</div>
+
+<div id="update-panel" ng-include="'templates/form.html'" ng-show="mode.update"></div>
+<div ng-include="'templates/confirmRemove.html'"></div>

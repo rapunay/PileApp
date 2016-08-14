@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sample web page</title>
+		
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/cmsProject.css" />
+		
+		<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/cmsTool.js"></script>
+		<script type="text/javascript" src="js/config.js"></script>
+		<script type="text/javascript" src="js/cmsProject.js"></script>
+	</head>
+
+	<body>
+		<div id="page-viewport" class="viewport">
+			<div id="group1" class="viewport-group">
+				<div class="row">
+					<div class="col-sm-6">
+						<img id="company-logo"></img>
+					</div>
+					<div class="col-sm-6 right-align">
+						<span id="project-name" class="label-text"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div id="image-carousel" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators"></ol>
+							<div class="carousel-inner" role="listbox"></div>
+							<a class="left carousel-control" href="#image-carousel" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#image-carousel" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 center-align">
+						<h1 id="heading1"  style="font-size:-webkit-xxx-large;"></h1>
+						<p>
+							<span id="text1" class="label-text"></span>
+						</p>
+						<p id="par1"></p>
+						<button id="g1-btn1"></button>
+					</div>
+				</div>
+			</div>
+			<div id="group2" class="viewport-group">
+				<div class="row">
+					<div class="col-sm-6">
+						<img id="image1" class=" modal-caption" alt="image" />
+						<div class="modal">
+							<div class="modal-content center-align">
+								<span class="glyphicon glyphicon-remove-circle"></span>
+								<div class="modal-title">
+									<h1 id="modal-heading1"></h1>
+								</div>
+								<div class="modal-body">
+									<p id="modal-par1"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<img id="image2" class=" modal-caption" alt="image" />
+						<div class="modal">
+							<div class="modal-content center-align">
+								<span class="glyphicon glyphicon-remove-circle"></span>
+								<div class="modal-title">
+									<h1 id="modal-heading2"></h1>
+								</div>
+								<div class="modal-body">
+									<p id="modal-par2"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 center-align">
+						<h3 id="heading2" ></h3>
+						<p id="par2" class="label-text"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<div class="col-sm-6">
+							<img id="image3" class=" modal-caption" alt="image" />
+							<div class="modal">
+								<div class="modal-content center-align">
+									<span class="glyphicon glyphicon-remove-circle"></span>
+									<div class="modal-title">
+										<h1 id="modal-heading3"></h1>
+									</div>
+									<div class="modal-body">
+										<p id="modal-par3"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<img id="image4" class=" modal-caption" alt="image" />
+							<div class="modal">
+								<div class="modal-content center-align">
+									<span class="glyphicon glyphicon-remove-circle"></span>
+									<div class="modal-title">
+										<h1 id="modal-heading4"></h1>
+									</div>
+									<div class="modal-body">
+										<p id="modal-par4"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="col-sm-6">
+							<img id="image5" class=" modal-caption" alt="image" />
+							<div class="modal">
+								<div class="modal-content center-align">
+									<span class="glyphicon glyphicon-remove-circle"></span>
+									<div class="modal-title">
+										<h1 id="modal-heading5"></h1>
+									</div>
+									<div class="modal-body">
+										<p id="modal-par5"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<img id="image6" class=" modal-caption" alt="image" />
+							<div class="modal">
+								<div class="modal-content center-align">
+									<span class="glyphicon glyphicon-remove-circle"></span>
+									<div class="modal-title">
+										<h1 id="modal-heading6"></h1>
+									</div>
+									<div class="modal-body">
+										<p id="modal-par6"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="breakout-group" class="viewport-group">
+				<div id="breakout-content" class="row">
+					<div class="col-sm-5" style="vertical-align:top; margin-top:30px;">
+						<h2 id="breakout-heading"  style="color:#000000;"></h2>
+						<span class="line"></span>
+						<p id="breakout-par" class="label-text"></p>
+					</div>
+					<div class="col-sm-7" style="height:350px; background-color:#ff6666;"></div>
+				</div>
+			</div>
+			<div id="group3" class="viewport-group">
+				<div class="row">
+					<div class="col-sm-12 center-align">
+						<h1 id="heading3"  style="font-size:-webkit-xxx-large;"></h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<img id="image7" class=" modal-caption" alt="image"/>
+						<div class="modal">
+							<div class="modal-content center-align">
+								<span class="glyphicon glyphicon-remove-circle"></span>
+								<div class="modal-title">
+									<h1 id="modal-heading7"></h1>
+								</div>
+								<div class="modal-body">
+									<p id="modal-par7"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 center-align">
+						<h3 id="heading4" ></h3>
+						<p id="par4" class="label-text"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<div class="col-sm-12">
+							<img id="image8" alt="image" />
+						</div>
+						<div class="col-sm-12 caption">
+							<div class="center-align">
+								<h5 id="caption-heading1" ></h5>
+								<p id="caption-par1" class="label-text"></p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="col-sm-2 caption">
+							<div class="right-align">
+								<h5 id="caption-heading2" ></h5>
+								<p id="caption-par2" class="label-text"></p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<img id="image9" alt="image" />
+						</div>
+						<div class="col-sm-4">
+							<img id="image10" alt="image" />
+						</div>
+						<div class="col-sm-2 caption">
+							<div>
+								<h5 id="caption-heading3" ></h5>
+								<p id="caption-par3" class="label-text"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="more-projects" class="viewport-group">
+				<div class="row center-align">
+					<h2 id="more-heading1" ></h2>
+					<p id="more-par1"></p>
+				</div>
+				<div class="row center-align">
+					<div class="col-sm-4">
+						<img id="more-image1" class="more-project" alt="project image" />
+						<h5 id="more-heading2" ></h5>
+						<p id="more-par2" class="label-text"></p>
+					</div>
+					<div class="col-sm-4">
+						<img id="more-image2" class="more-project" alt="project image" />
+						<h5 id="more-heading3" ></h5>
+						<p id="more-par3" class="label-text"></p>
+					</div>
+					<div class="col-sm-4">
+						<img id="more-image3" class="more-project" alt="project image" />
+						<h5 id="more-heading4" ></h5>
+						<p id="more-par4" class="label-text"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="overlay"></div>
+	</body>
+<html>

@@ -1,0 +1,337 @@
+* {
+	box-sizing: border-box;
+	font-family: verdana, tahoma, arial;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+button:focus {
+	outline: none;
+}
+
+#wrapper {
+	min-width: 320px;
+	height: 100%;
+	overflow: auto;
+	margin: 0 auto;
+	background: #000000;
+}
+
+#catalog {
+	width: 0px;
+	height: calc(100% - 50px);
+	min-height: calc(100% - 110px);
+	overflow: hidden;
+	text-align: center;
+	padding-top: 30px;
+}
+
+#catalog.hasMovies {
+	width: 100%;
+	-webkit-animation-name: showEffect;
+    -webkit-animation-duration: 0.5s;
+    animation-name: showEffect;
+    animation-duration: 0.5s;
+}
+
+.movie {
+	width: calc(100%/4 - 10px);
+	min-width: 150px;
+	height: 100%;
+	margin-left: 5px;
+	margin-right: 5px;
+	background: #eeeeee;
+	border: 3px solid #cccccc;
+	display: inline-block;
+	vertical-align: top;
+	overflow: auto;
+}
+
+.movie .title {
+	margin: 5px;
+	height: 35px;
+}
+
+.movie .detail {
+	height: 260px;
+}
+
+.movie .photo {
+	max-width: calc(100% - 8px);
+	height: 100%;
+	margin: 0 auto;
+	border: 3px solid #fbb829;
+}
+
+.movie .caption {
+	height: 0px;
+	max-height: 100%;
+	padding: 8px;
+	overflow: auto;
+	text-align: justify;
+	visibility: hidden;
+}
+
+.movie .photo,
+.movie .detail:hover .caption {
+	-webkit-transition: height 0.5s;
+	transition: height 0.5s;
+}
+
+.movie .detail:hover .photo,
+.movie .detail:active .photo {
+	height: 0px;
+}
+
+.movie .detail:hover .caption,
+.movie .detail:active .caption {
+	height: calc(100% - 10px);
+	visibility: visible;
+}
+
+.movie > .classification {
+	height: 50px;
+	margin-top: 30px;
+	margin-bottom: 4px;
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+.movie > button {
+	min-width: 34px;
+	max-width: calc(100% - 10px);
+	height: 36px;
+	padding: 8px;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+}
+
+.movie > button,
+#pagination button.selected {
+	background: #fbb829;
+}
+
+.movie button:hover,
+#pagination button.selected:hover,
+#wrapper #pagination button:active,
+#pagination button.selected:focus {
+	background: #ffe545;
+}
+
+.movie.listed .addBtn {
+	display: none;
+}
+
+.movie .removeBtn {
+	display: none;
+}
+
+.movie.listed .removeBtn {
+	display: inline-block;
+}
+
+#pagination {
+	text-align: center;
+	margin: 0 auto;
+	padding: 6px;
+}
+
+#pagination button {
+	min-width: 34px;
+	padding: 8px 8px;
+	font-weight: bold;
+	background: #b3b3b3;
+	border: 1px solid #000000;
+	cursor: pointer;
+}
+
+#pagination button:hover,
+#pagination button:focus {
+	background: #cccccc;
+}
+
+#pagination button.hidden {
+	display: none;
+}
+
+#watchlist {
+	height: 30px;
+	position: fixed;
+	right: 10px;
+	color: #fbb829;
+	text-align: right;
+	border-bottom-left-radius: 8px;
+	background-color: #000000;
+}
+
+#counter {
+	color: #eeeeee;
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#counter:hover {
+	text-decoration: underline;
+}
+
+#watchlist-items {
+	display: none;
+	position: fixed;
+	text-align: left;
+	font-size: 12px;
+	color: #000000;
+	border-radius: 5px;
+	background: #fbb829;
+	overflow: hidden;
+	min-width: 122px;
+}
+
+#watchlist #counter:hover ~ #watchlist-items,
+#watchlist #counter:active ~ #watchlist-items,
+#watchlist-items:hover,
+#watchlist-items:active {
+	display: block;
+	right: 10px;
+	-webkit-animation-name: watchlistEffect;
+    -webkit-animation-duration: 0.2s;
+    animation-name: watchlistEffect;
+    animation-duration: 0.2s;
+}
+
+#watchlist-items ul {
+	list-style: none;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+#watchlist-items li:hover .item {
+	color: #ffffff;
+}
+
+#watchlist-items .item {
+	margin-right: 30px;
+}
+
+.removeIcon{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    margin-right: 10px;
+}
+
+.removeIcon:before,
+.removeIcon:after{
+    content:'';
+    position:absolute;
+    width: 15px;
+    height: 2px;
+    background-color: #000000;
+}
+
+.removeIcon:before{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    transform:rotate(45deg);
+    left: 0px;
+    top: 5px;
+}
+
+.removeIcon:after{
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    right: 0px;
+    top: 5px;
+}
+
+.removeIcon:hover:before,
+.removeIcon:hover:after{
+    background-color: #ffffff;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 768px) {
+	.movie .title {
+		height: 60px;
+	}
+
+	.movie > .classification {
+		height: 60px;
+		margin-top: 10px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#catalog {
+		height: 530px;
+	}
+
+    .movie {
+    	width: calc(100%/2 - 20px);
+    	height: 240px;
+    }
+
+    .movie .detail {
+    	height: 100px;
+    }
+
+    .movie .photo,
+    .movie .detail:hover .photo {
+    	height: 100%;
+    	float: left;
+    	margin-left: 4px;
+    }
+
+    .movie .caption,
+    .movie .detail:hover .caption {
+    	height: 100%;
+    	visibility: visible;
+    }
+
+	.movie .classification {
+		margin-top: 8px;
+		height: 40px;
+	}
+}
+
+@media only screen and (max-width: 560px) {
+	#catalog {
+		height: auto;
+	}
+	
+	.movie {
+    	width: calc(100% - 20px);
+    }
+
+    .movie .photo,
+    .movie .detail:hover .photo {
+    	height: 142%;
+    }
+}
+
+@-webkit-keyframes showEffect {
+    from {width: 0px;}
+    to {width: 100%;}
+}
+
+@keyframes showEffect {
+    from {width: 0px;}
+    to {width: 100%;}
+}
+
+@-webkit-keyframes watchlistEffect {
+	from {right: -100%;}
+	to right{right: 10px;}
+}
+
+@keyframes watchlistEffect {
+	from {right: -100%;}
+	to {right: 10px;}
+}

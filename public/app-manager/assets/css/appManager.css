@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+}
+
+#app-manager-nav {
+	background: #222222;
+	height: 100%;
+}
+
+#app-manager-nav ul {
+	list-style: none;
+	padding: 20px 0px;
+}
+
+#app-manager-nav ul a {
+	color: #9d9d9d;
+}
+
+#app-manager-container {
+	height: 100%;
+	background: #ededed;
+	padding: 0px;
+}
+
+iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}

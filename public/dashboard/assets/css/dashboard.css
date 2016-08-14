@@ -1,0 +1,18 @@
+#canvass {
+	background-color: #fafafa;
+}
+
+.row {
+	margin-top: 10px;
+}
+
+.panel-body {
+	height: 400px;
+	overflow: auto;
+}
+
+.panel-body iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}

@@ -1,0 +1,77 @@
+<div id="form-panel" class="panel">
+	<legend class="panel-title center-align" ng-show="!mode.update">Create Item</legend>
+	<legend class="panel-title center-align" ng-show="mode.update">Update Item</legend>
+	<div class="panel-content">	
+		<div class="msg-container">
+			<span class="icon-msg error" ng-show="mode.reqError">{{appMsg}}</span>
+			<span class="icon-msg success" ng-show="mode.reqSuccess">{{appMsg}}</span>
+		</div>
+		<form name="itemForm" class='item-form' novalidate>
+			<fieldset class="field-group">
+				<div class="panel field-subgroup">
+					<legend class="panel-title">Fill-up item information</legend>
+					<div class="panel-content">					
+						<div class="field-container required">
+							<label>Id</label>
+							<input name="id" type="text" class="validate input-field" maxlength="10" required ng-model="item.id" ng-disabled="mode.update" />
+							<div class="warning-msg" ng-show="(itemForm.$submitted || itemForm.id.$touched) && itemForm.id.$error.required">
+								<span class="warning">Item id is required.</span>
+							</div>
+						</div>
+
+						<div class="field-container required">
+							<label>Name</label>
+							<input name="name" type="text" class="validate input-field" maxlength="30" required ng-model="item.name" />
+							<div class="warning-msg" ng-show="(itemForm.$submitted || itemForm.name.$touched) && itemForm.name.$error.required">
+								<span class="warning">Item name is required.</span>
+							</div>
+						</div>
+
+						<div class="field-container">
+							<label>Model</label>
+							<input name="model" type="text" class="validate input-field" maxlength="20" ng-model="item.model" />
+						</div>
+
+						<div class="field-container">
+							<label>Type</label>
+							<input name="type" type="text" class="validate input-field" maxlength="20" ng-model="item.type" />
+						</div>
+
+						<div class="field-container">
+							<label>Quantity</label>
+							<input name="quantity" type="text" class="validate input-field" ng-model="item.quantity" integer-only />
+						</div>
+
+						<div class="field-container">
+							<label>Price</label>
+							<input name="price" type="text" class="validate input-field" ng-model="item.price" decimal-only />
+						</div>
+	
+						<div class="field-container">
+							<label for="description">Description</label>
+							<div>
+								<textarea name="description" maxlength="300" ng-model="item.description"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div class="panel field-subgroup">
+					<legend class="panel-title">Upload item photo</legend>
+					<div class="panel-content">
+						<input type="file" ngf-select ng-model="item.image" name="file" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
+						<i ng-show="itemForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 1M</i>
+						<img class="thumb" ng-show="(itemForm.file.$valid || item.imageData)" ngf-thumbnail="(item.image || item.imageData)" >
+						<span class="icon remove" ng-click="item.image = null;item.imageName = item.imageData = undefined" ng-show="(item.image || item.imageName)"></span>
+					</div>
+				</div>
+			</fieldset>
+			
+			<fieldset class="field-group center-align">
+				<input type="submit" value="Create" ng-click="addItem(itemForm)" ng-show="!mode.update" />
+				<input type="button" value="Cancel" ng-click="toggleMode('update', false)" ng-show="mode.update" />
+				<input type="submit" value="Update" ng-click="updateItem(itemForm)" ng-show="mode.update" />
+			</fieldset>
+		</form>
+	</div>
+</div>

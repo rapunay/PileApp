@@ -1,0 +1,51 @@
+[
+    {
+    	"name": "more-projects",
+    	"type": "group",
+    	"value": [{
+				"name": "more-heading1",
+				"type": "text",
+				"value": "my other projects"
+			},{
+				"name": "more-par1",
+				"type": "text",
+				"value": "Check out other simple projects that I created"
+			},{
+				"name": "more-image1",
+				"type": "image",
+				"value": "assets/images/more-projects/turtle-in-the-pond.png"
+			},{
+				"name": "more-heading2",
+				"type": "text",
+				"value": "turtle in the pond"
+			},{
+				"name": "more-par2",
+				"type": "text",
+				"value": "A very simple app that simulates the movement of a turtle in a pond"
+			},{
+				"name": "more-image2",
+				"type": "image",
+				"value": "assets/images/more-projects/movie-watchlist.png"
+			},{
+				"name": "more-heading3",
+				"type": "text",
+				"value": "movie watchlist"
+			},{
+				"name": "more-par3",
+				"type": "text",
+				"value": "Simple app for browsing a movie and adding it to your watchlist"
+			},{
+				"name": "more-image3",
+				"type": "image",
+				"value": "assets/images/more-projects/item-inventory.png"
+			},{
+				"name": "more-heading4",
+				"type": "text",
+				"value": "item inventory"
+			},{
+				"name": "more-par4",
+				"type": "text",
+				"value": "Simple app for storing items"
+		}]
+    }
+]

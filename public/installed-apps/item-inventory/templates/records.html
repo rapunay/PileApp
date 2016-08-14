@@ -1,0 +1,8 @@
+<div id="records-panel" class="panel">
+	<legend class="panel-title center-align">Item Records</legend>
+	<div class="panel-content" ng-include="'templates/recordList.html'">
+	</div>
+</div>
+
+<div id="update-panel" ng-include="'templates/form.html'" ng-show="mode.update"></div>
+<div ng-include="'templates/confirmRemove.html'"></div>
