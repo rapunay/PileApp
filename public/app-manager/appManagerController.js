@@ -10,16 +10,16 @@
 	function AppManagerCtrl($scope, AppService) {
 		$scope.appList = [{
 				name: "Turtle in the Pond",
-				path: "/public/installed-apps/turtle-in-the-pond/index.html"
+				path: "public/installed-apps/turtle-in-the-pond/index.html"
 			},{
 				name: "Movie Watchlist",
-				path: "/public/installed-apps/movie-watchlist/index.html"
+				path: "public/installed-apps/movie-watchlist/index.html"
 			},{
 				name: "Sample CMS",
-				path: "/public/installed-apps/cms/index.html"
+				path: "public/installed-apps/cms/index.html"
 			},{
 				name: "Item Inventory",
-				path: "/public/installed-apps/item-inventory/itemInventory.html"
+				path: "public/installed-apps/item-inventory/itemInventory.html"
 			}];
 		$scope.currApp = null;
 			

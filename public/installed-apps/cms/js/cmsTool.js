@@ -15,7 +15,7 @@ var CMS = (function(){
 		loadContentData: function(url, callback){
 			var CMS = this;
 			
-			load(url, function(data){			
+			load(url, function(data){
 				for(var i in data){
 					CMS.applyContent(data[i]);
 				}
