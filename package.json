@@ -1,0 +1,24 @@
+{
+  "name": "pileapp",
+  "version": "1.0.0",
+  "description": "the goal is to create a web app that allows installation of other web applications",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web",
+    "service",
+    "angularjs"
+  ],
+  "author": "rapunay",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4"
+  },
+  "engines": {
+    "node": "4.2.1"
+  }
+}
