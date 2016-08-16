@@ -22,9 +22,27 @@
 				path: "public/installed-apps/item-inventory/itemInventory.html"
 			}];
 		$scope.currApp = null;
+		$scope.navStatus = "";
+		$scope.navIconTitle = "Collapse Navigator";
+		$scope.verNavIconClass = "arrow-right";
+		$scope.horNavIconClass = "arrow-up";
 			
 		$scope.openApp = function(app){
 			$scope.currApp = app;
 		};
+		
+		$scope.toggleNavigator = function(){
+			if($scope.navStatus == "collapsed"){
+				$scope.navStatus = "";
+				$scope.navIconTitle = "Collapse Navigator";
+				$scope.verNavIconClass = "arrow-right";
+				$scope.horNavIconClass = "arrow-up";
+			}else{
+				$scope.navStatus = "collapsed";
+				$scope.navIconTitle = "Expand Navigator";
+				$scope.verNavIconClass = "arrow-left";
+				$scope.horNavIconClass = "arrow-down";
+			}
+		}
 	}
 })();

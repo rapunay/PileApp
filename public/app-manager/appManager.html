@@ -4,10 +4,16 @@
 	</head>
 
 	<body>
-		<div id="app-manager-nav" class="col-sm-2">
+		<div id="app-manager-nav" class="col-sm-2 {{navStatus}}">
 			<ul>
 				<li ng-repeat="app in appList | orderBy:'name'" ng-click="openApp(app)"><span class="icon expand white active"></span><a href="">{{app.name}}</a></li>
 			</ul>
+			<div class="nav-opener vertical">
+				<span class="icon white {{verNavIconClass}}" title="{{navIconTitle}}" ng-click="toggleNavigator()"></span>
+			</div>
+			<div class="nav-opener horizontal">
+				<span class="icon white {{horNavIconClass}}" title="{{navIconTitle}}" ng-click="toggleNavigator()"></span>
+			</div>
 		</div>
 		<div id="app-manager-container" class="col-sm-10">
 			<iframe src="{{currApp.path}}"></iframe>

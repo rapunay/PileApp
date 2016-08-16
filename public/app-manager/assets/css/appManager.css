@@ -2,18 +2,51 @@
 	box-sizing: border-box;
 }
 
-#app-manager-nav {
+#app-content {
 	background: #222222;
-	height: 100%;
+}
+
+#app-manager-nav,
+#app-manager-container {
+	-webkit-transition: all linear 0.1s;
+	transition: all linear 0.1s;
+}
+
+#app-manager-nav {
+	padding: 0px;
+}
+
+#app-manager-nav.collapsed {
+	width: 20px;
+	background-color: #3b7394;
+}
+
+#app-manager-nav.collapsed ul {
+	display: none;
+}
+
+#app-manager-nav.collapsed ~ #app-manager-container {
+	width: calc(100% - 20px);
 }
 
 #app-manager-nav ul {
-	list-style: none;
+	width: calc(100% - 24px);
+	float: left;
 	padding: 20px 0px;
+	margin: 0px;
+	list-style: none;
 }
 
 #app-manager-nav ul a {
 	color: #9d9d9d;
+}
+
+#app-manager-nav .nav-opener {
+	display: inline-block;
+}
+
+#app-manager-nav .nav-opener:last-child {
+	display: none;
 }
 
 #app-manager-container {
@@ -26,4 +59,28 @@ iframe {
 	width: 100%;
 	height: 100%;
 	border: none;
+}
+
+@media only screen and (max-width: 767px) {
+	#app-manager-nav.collapsed,
+	#app-manager-nav .nav-opener,
+	#app-manager-nav.collapsed ~ #app-manager-container {
+		width: 100%;
+	}
+
+	#app-manager-nav.collapsed ~ #app-manager-container {
+		height: calc(100% - 20px);
+	}
+
+	#app-manager-nav .nav-opener {
+		text-align: center;
+	}
+	
+	#app-manager-nav .nav-opener.vertical {
+		display: none;
+	}
+	
+	#app-manager-nav .nav-opener.horizontal {
+		display: inline-block;
+	}
 }
