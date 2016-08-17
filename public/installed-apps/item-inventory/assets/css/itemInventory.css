@@ -176,6 +176,10 @@
 }
 
 @media only screen and (max-width: 767px) {
+	.app-nav {
+		height: 40px;
+	}
+
 	#item-panel .app-content {
 		width: 100%;
 	}
