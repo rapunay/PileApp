@@ -161,17 +161,6 @@
 	left: calc(50% - 150px);
 }
 
-#item-panel .overlay:not(.ng-hide) {
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: #ececec;
-	opacity: 0.5;
-	z-index: 999;
-}
-
 #item-panel #search-panel .field-group {
 	max-width: 300px;
 }

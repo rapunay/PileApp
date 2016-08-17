@@ -27,6 +27,9 @@
 			<div class="app-content" ng-include="templateUrl"></div>
 		</div>
 		
+		<div ng-include="'templates/loading.html'"></div>
+		<div class="overlay" ng-show="mode.modal || mode.loading"></div>
+		
 		<script src="app.js"></script>
 		<script src="assets/js/directives.js"></script>
 	

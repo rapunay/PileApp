@@ -351,6 +351,75 @@ legend {
 	color: #ff0000;
 }
 
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #ececec;
+	opacity: 0.5;
+	z-index: 999;
+}
+
+.loading-indicator {
+	width: 60px;
+	position: fixed;
+	top: calc(50% - 25px);
+	left: 50%;
+	z-index: 99999;
+}
+
+.loading-indicator:after {
+	content: "Loading...";
+	opacity: 0.5;
+}
+
+.loading-indicator .loading-bar {
+	width: 10px;
+	height: 0px;
+	margin-bottom: 20px;
+	background: #000000;
+	opacity: 0.5;
+	animation-name: loading-bar-animate;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	display: inline-block;
+	margin-right: 2px;
+}
+
+.loading-indicator .loading-bar.loading-bar-1 {
+	animation-delay: 0.1s;
+}
+
+.loading-indicator .loading-bar.loading-bar-2 {
+	animation-delay: 0.2s;
+}
+
+.loading-indicator .loading-bar.loading-bar-3 {
+	animation-delay: 0.3s;
+}
+
+.loading-indicator .loading-bar.loading-bar-4 {
+	animation-delay: 0.4s;
+}
+
+.loading-indicator .loading-bar.loading-bar-5 {
+	animation-delay: 0.5s;
+}
+
+@keyframes loading-bar-animate {
+	from {
+		height: 0px;
+		margin-bottom: 20px;
+	}
+	to {
+		height: 40px;
+		margin-bottom: 0px;
+
+	}
+}
+
 @media only screen and (max-width: 767px) {
 	.app-nav {
 		position: fixed;

@@ -35,6 +35,7 @@
 		$scope.addItem = function(form){
 			$scope.toggleMode("reqError", false);
 			$scope.toggleMode("reqSuccess", false);
+			$scope.toggleMode("loading", true);
 			
 			var newItem = createItemData($scope.item);
 			
@@ -50,6 +51,7 @@
 					$scope.itemList.push(itemData);
 					resetForm($scope, form);
 					$scope.toggleMode("reqSuccess", true);
+					$scope.toggleMode("loading", false);
 					$scope.appMsg = "The item has been created successfully!"
 				}, function(reason){
 					if(reason.errorCode){
@@ -58,10 +60,13 @@
 							$scope.appMsg = "An item with the given id already exists!"
 						}
 					}
+					$scope.toggleMode("loading", false);
 				});		
 		};
 		
 		$scope.removeItem = function(){
+			$scope.toggleMode("loading", true);
+			
 			ItemService.remove(deleteItem.id)
 				.then(function(data){
 					var itemList = $scope.itemList;
@@ -74,12 +79,16 @@
 							$scope.appMsg = "Item " +data.id+ " has been removed successfully!"
 						}
 					}
+					$scope.toggleMode("loading", false);
+				},function(reason){
+					$scope.toggleMode("loading", false);
 				});
 					
 			$scope.toggleMode("remove", false);
 		};
 		
 		$scope.updateItem = function(form){
+			$scope.toggleMode("loading", true);
 			var updateData = createItemData($scope.item);
 		
 			ItemService.update(updateData)
@@ -91,7 +100,7 @@
 					if(itemImage){
 						uploadItemImage(itemImage, itemData, ItemService);
 					}else{
-						itemData["imageData"] = defaultImagePath;
+						itemData["imageData"] = ($scope.item["imageData"] || defaultImagePath);
 					}
 				
 					for(var i=0; i<itemList.length; i++){
@@ -102,11 +111,15 @@
 					resetForm($scope, form);
 					$scope.toggleMode("update", false);
 					$scope.toggleMode("reqSuccess", true);
+					$scope.toggleMode("loading", false);
 					$scope.appMsg = "Item " +itemData.id+ " has been modified successfully!"
+				},function(reason){
+					$scope.toggleMode("loading", false);
 				});
 		};
 		
 		$scope.findItem = function(){
+			$scope.toggleMode("loading", true);
 			$scope.toggleMode("reqError", false);
 			if(!$scope.searchCriteria.val){
 				$scope.getAllItems();
@@ -122,15 +135,22 @@
 					}
 					getImages(itemList);
 					$scope.itemList = itemList;
+					$scope.toggleMode("loading", false);
+				},function(reason){
+					$scope.toggleMode("loading", false);
 				});
 		};
 		
 		$scope.getAllItems = function(){
+			$scope.toggleMode("loading", true);
 			ItemService.getAll()
 				.then(function(data){
 					var itemList = data;
 					getImages(itemList);
 					$scope.itemList = itemList;
+					$scope.toggleMode("loading", false);
+				},function(reason){
+					$scope.toggleMode("loading", false);
 				});
 		};
 		
@@ -163,6 +183,7 @@
 									break;
 				case "reqSuccess":	$scope.mode[mode] = toggle;
 									break;
+				case "loading":		$scope.mode[mode] = toggle;
 			}
 		};
 		
@@ -189,8 +210,6 @@
 			$scope.searchCriteria = {};
 			currPanel = panelName;
 		};
-		
-		$scope.getAllItems();
 		
 		var createItemData = function(item){
 			var itemImage = item.image,

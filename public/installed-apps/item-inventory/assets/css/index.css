@@ -215,17 +215,17 @@ legend {
     height: 2px;
 }
 
-.icon.expand:before{
-    -webkit-transform:rotate(0deg);
-    -moz-transform:rotate(0deg);
+.icon.expand:before {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
     transform: rotate(0deg);
     left: 0px;
     top: 8px;
 }
 
-.icon.expand:after{
-    -webkit-transform:rotate(90deg);
-    -moz-transform:rotate(90deg);
+.icon.expand:after {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
     transform: rotate(90deg);
     right: 0px;
     top: 8px;
@@ -233,31 +233,117 @@ legend {
 
 .icon.expand.active:before,
 .icon.expand.active:after {
-    -webkit-transform:rotate(360deg);
-    -moz-transform:rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
     transform: rotate(360deg);
 }
 
 .icon.remove:before,
-.icon.remove:after{
+.icon.remove:after {
     width: 16px;
     height: 2px;
 }
 
-.icon.remove:before{
-    -webkit-transform:rotate(45deg);
-    -moz-transform:rotate(45deg);
-    transform:rotate(45deg);
+.icon.remove:before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
     left: 0px;
     top: 6px;
 }
 
-.icon.remove:after{
-    -webkit-transform:rotate(-45deg);
-    -moz-transform:rotate(-45deg);
-    transform:rotate(-45deg);
+.icon.remove:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
     right: 0px;
     top: 6px;
+}
+
+.icon.arrow-left:before,
+.icon.arrow-left:after {
+    width: 10px;
+    height: 2px;
+}
+
+.icon.arrow-left:before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 3px;
+    top: 5px;
+}
+
+.icon.arrow-left:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 3px;
+    top: 11px;
+}
+
+.icon.arrow-right:before,
+.icon.arrow-right:after {
+    width: 10px;
+    height: 2px;
+}
+
+.icon.arrow-right:before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 3px;
+    top: 11px;
+}
+
+.icon.arrow-right:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 3px;
+    top: 5px;
+}
+
+.icon.arrow-up:before,
+.icon.arrow-up:after {
+    width: 10px;
+    height: 2px;
+    top: 8px;
+}
+
+.icon.arrow-up:before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 6px;
+}
+
+.icon.arrow-up:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 6px;
+}
+
+.icon.arrow-down:before,
+.icon.arrow-down:after {
+    width: 10px;
+    height: 2px;
+    top: 8px;
+}
+
+.icon.arrow-down:before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 0px;
+}
+
+.icon.arrow-down:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 0px;
 }
 
 .required label:after {
@@ -265,11 +351,79 @@ legend {
 	color: #ff0000;
 }
 
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #ececec;
+	opacity: 0.5;
+	z-index: 999;
+}
+
+.loading-indicator {
+	width: 60px;
+	position: fixed;
+	top: calc(50% - 25px);
+	left: 50%;
+	z-index: 99999;
+}
+
+.loading-indicator:after {
+	content: "Loading...";
+	opacity: 0.5;
+}
+
+.loading-indicator .loading-bar {
+	width: 10px;
+	height: 0px;
+	margin-bottom: 20px;
+	background: #000000;
+	opacity: 0.5;
+	animation-name: loading-bar-animate;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	display: inline-block;
+	margin-right: 2px;
+}
+
+.loading-indicator .loading-bar.loading-bar-1 {
+	animation-delay: 0.1s;
+}
+
+.loading-indicator .loading-bar.loading-bar-2 {
+	animation-delay: 0.2s;
+}
+
+.loading-indicator .loading-bar.loading-bar-3 {
+	animation-delay: 0.3s;
+}
+
+.loading-indicator .loading-bar.loading-bar-4 {
+	animation-delay: 0.4s;
+}
+
+.loading-indicator .loading-bar.loading-bar-5 {
+	animation-delay: 0.5s;
+}
+
+@keyframes loading-bar-animate {
+	from {
+		height: 0px;
+		margin-bottom: 20px;
+	}
+	to {
+		height: 40px;
+		margin-bottom: 0px;
+
+	}
+}
+
 @media only screen and (max-width: 767px) {
 	.app-nav {
 		position: fixed;
 		z-index: 999;
-		height: 40px;
 	}
 
 	.nav-icon {
