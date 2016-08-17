@@ -188,6 +188,7 @@
 		};
 		
 		$scope.openPanel = function(panelName){
+			closeNavigator();
 			if(currPanel == panelName){
 				return;
 			}
@@ -262,6 +263,10 @@
 				form.$setUntouched();
 			}
 			$scope.item = {};
+		};
+		
+		var closeNavigator = function(){
+			angular.element(document.querySelector("#item-panel .app-nav .nav-icon")).removeClass("active");
 		};
 	}
 

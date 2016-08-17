@@ -137,8 +137,8 @@
 	overflow: hidden;
 }
 
-#item-panel #update-panel:not(.ng-hide),
-#item-panel #confirm-panel:not(.ng-hide) {
+#item-panel #update-panel,
+#item-panel #confirm-panel {
 	position: absolute;
 	z-index: 9999;
 	-webkit-animation-name: showEffect;
@@ -147,14 +147,14 @@
 	animation-duration: 0.5s;
 }
 
-#item-panel #update-panel:not(.ng-hide) {
+#item-panel #update-panel {
 	width: 720px;
 	height: 510px;
 	top: calc(50% - 255px);
 	left: calc(50% - 360px);
 }
 
-#item-panel #confirm-panel:not(.ng-hide) {
+#item-panel #confirm-panel {
 	width: 300px;
 	height: 100px;
 	top: calc(50% - 50px);
@@ -184,7 +184,7 @@
 		width: 100%;
 	}
 
-	#item-panel #update-panel:not(.ng-hide) {
+	#item-panel #update-panel {
 		width: calc(100vw - 10px);
 		height: 510px;
 		left: calc(50% - (100vw - 10px)/2);
@@ -195,6 +195,11 @@
 @media only screen and (max-width: 480px) {
 	#item-panel .panel {
 		min-width: calc(100% - 10px);
+	}
+	
+	#item-panel #confirm-panel {
+		width: calc(100vw - 10px);
+		left: calc(50% - (100vw - 10px)/2);
 	}
 
 	#item-panel .record-info {

@@ -22,13 +22,14 @@
 				path: "public/installed-apps/item-inventory/itemInventory.html"
 			}];
 		$scope.currApp = null;
-		$scope.navStatus = "";
-		$scope.navIconTitle = "Collapse Navigator";
-		$scope.verNavIconClass = "arrow-right";
-		$scope.horNavIconClass = "arrow-up";
+		$scope.navStatus = "collapsed";
+		$scope.navIconTitle = "Expand Navigator";
+		$scope.verNavIconClass = "arrow-left";
+		$scope.horNavIconClass = "arrow-down";
 			
 		$scope.openApp = function(app){
 			$scope.currApp = app;
+			$scope.toggleNavigator();
 		};
 		
 		$scope.toggleNavigator = function(){
