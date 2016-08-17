@@ -16,18 +16,18 @@ button:focus {
 #wrapper {
 	min-width: 320px;
 	height: 100%;
-	overflow: auto;
 	margin: 0 auto;
 	background: #000000;
+	overflow: auto;
 }
 
 #catalog {
 	width: 0px;
 	height: calc(100% - 50px);
 	min-height: calc(100% - 110px);
-	overflow: hidden;
 	text-align: center;
 	padding-top: 30px;
+	overflow: hidden;
 }
 
 #catalog.hasMovies {
@@ -48,7 +48,6 @@ button:focus {
 	border: 3px solid #cccccc;
 	display: inline-block;
 	vertical-align: top;
-	overflow: auto;
 }
 
 .movie .title {
@@ -293,11 +292,12 @@ button:focus {
     .movie .detail:hover .caption {
     	height: 100%;
     	visibility: visible;
+    	margin-top: 0px;
     }
 
 	.movie .classification {
 		margin-top: 8px;
-		height: 40px;
+		height: 36px;
 	}
 }
 
