@@ -36,6 +36,19 @@
 			return deferred.promise;
 		};
 		
+		service.hardRemove = function(id){
+			var deferred = $q.defer();
+			$http.delete(baseUrl + "/item/hardremove/" + id)
+				.success(function(data){
+					deferred.resolve(data);
+				})
+				.error(function(data){
+					deferred.reject(data);
+				});
+			
+			return deferred.promise;
+		};
+		
 		service.update = function(updateData){
 			var deferred = $q.defer();
 			$http.put(baseUrl + "/item", updateData)
@@ -75,27 +88,10 @@
 			return deferred.promise;
 		};
 		
-		service.retrieveImage = function(filename, dirname){
-			var deferred = $q.defer();
-			$http.get(baseUrl + "/image/retrieve/" + dirname + "/" + filename)
-				.success(function(data){
-					deferred.resolve(data);
-				})
-				.error(function(data){
-					deferred.reject(data);
-				});
-			
-			return deferred.promise;
-		};
-		
-		service.uploadImage = function(file, filename, dirname) {
+		service.uploadImage = function(file) {
 			file.upload = Upload.upload({
 				url: baseUrl + "/image",
-				data: {
-						file: file,
-						filename: filename,
-						dirname: dirname
-					}
+				data: {file: file}
 			});
 			
 			return file.upload;

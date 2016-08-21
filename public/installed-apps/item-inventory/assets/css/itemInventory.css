@@ -79,7 +79,8 @@
 	border: 1px solid #080808;
 }
 
-#item-panel #search-panel #record-list {
+#item-panel #record-list .deleted-rec {
+	background-color: #ffb6b6;
 }
 
 #item-panel .record-title {

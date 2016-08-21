@@ -1,7 +1,9 @@
 <div class="icon-msg success" ng-show="mode.reqSuccess">{{appMsg}}</div>
 <span>Filter: <input type="text" ng-model="searchText"></span>
+<br />
+<span>Include deleted items <input type="checkbox" ng-model="showDeleted"></span>
 <div id="record-list">
-	<div class="record" ng-repeat="item in itemList | orderBy:'id' | filter:searchText">
+	<div class="record" ng-class="{'deleted-rec':item._recStatus=='DELETED'}" ng-repeat="item in itemList | orderBy:'id' | filter:searchText" ng-hide="item._recStatus=='DELETED' && !showDeleted">
 		<span class="icon expand" toggle-class="active"></span>
 		<div class="record-title item-info single-line-text" title="{{item.id}} - {{item.name}}">{{item.id}} - {{item.name}}</div>
 		<span class="record-buttons">
@@ -36,7 +38,7 @@
 				</div>
 			</div>
 			<div class="record-image">
-				<img class="thumb" ng-show="item.image" ngf-thumbnail="item.imageData">
+				<img class="thumb" ng-show="item.itemImage" ngf-thumbnail="item.itemImage">
 			</div>
 		</div>
 	</div>

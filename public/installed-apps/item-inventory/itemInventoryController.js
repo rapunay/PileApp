@@ -8,10 +8,7 @@
 	ItemInventoryCtrl.$inject = ["$scope", "ItemInventoryService"];
 
 	function ItemInventoryCtrl($scope, ItemService) {
-		var deleteItem = null,
-			imageDirName = "item-images",
-			defaultImagePath = "assets/images/default-item-image.jpg",
-			templates = {
+		var templates = {
 				itemFormView: "templates/form.html",
 				recordsView: "templates/records.html",
 				searchView: "templates/search.html"
@@ -54,8 +51,8 @@
 					$scope.toggleMode("loading", false);
 					$scope.appMsg = "The item has been created successfully!"
 				}, function(reason){
-					if(reason.errorCode){
-						if(reason.errorCode == 2){
+					if(reason && reason.errno){
+						if(reason.errno == 1062){
 							$scope.toggleMode("reqError", true);
 							$scope.appMsg = "An item with the given id already exists!"
 						}
@@ -67,22 +64,39 @@
 		$scope.removeItem = function(){
 			$scope.toggleMode("loading", true);
 			
-			ItemService.remove(deleteItem.id)
-				.then(function(data){
-					var itemList = $scope.itemList;
+			if($scope.item._recStatus == "DELETED"){
+				ItemService.hardRemove($scope.item.id)
+					.then(function(data){
+						var itemList = $scope.itemList;
 					
-					for(var i=0; i<itemList.length; i++){
-						if(itemList[i].id == data.id){
-							itemList.splice(i, 1);
-							
-							$scope.toggleMode("reqSuccess", true);
-							$scope.appMsg = "Item " +data.id+ " has been removed successfully!"
+						for(var i=0; i<itemList.length; i++){
+							if(itemList[i].id == data.id){
+								itemList.splice(i, 1);
+								$scope.toggleMode("reqSuccess", true);
+								$scope.appMsg = "Item " +data.id+ " has been permanently removed!"
+							}
 						}
-					}
-					$scope.toggleMode("loading", false);
-				},function(reason){
-					$scope.toggleMode("loading", false);
-				});
+						$scope.toggleMode("loading", false);
+					},function(reason){
+						$scope.toggleMode("loading", false);
+					});
+			}else{
+				ItemService.remove($scope.item._id)
+					.then(function(data){
+						var itemList = $scope.itemList;
+					
+						for(var i=0; i<itemList.length; i++){
+							if(itemList[i].id == data.id){
+								itemList[i] = data;
+								$scope.toggleMode("reqSuccess", true);
+								$scope.appMsg = "Item " +data.id+ " has been removed successfully!"
+							}
+						}
+						$scope.toggleMode("loading", false);
+					},function(reason){
+						$scope.toggleMode("loading", false);
+					});
+			}
 					
 			$scope.toggleMode("remove", false);
 		};
@@ -99,8 +113,6 @@
 				
 					if(itemImage){
 						uploadItemImage(itemImage, itemData, ItemService);
-					}else{
-						itemData["imageData"] = ($scope.item["imageData"] || defaultImagePath);
 					}
 				
 					for(var i=0; i<itemList.length; i++){
@@ -133,7 +145,6 @@
 						$scope.toggleMode("reqError", true);
 						$scope.appMsg = "The search did not find any item that matches the given criteria."
 					}
-					getImages(itemList);
 					$scope.itemList = itemList;
 					$scope.toggleMode("loading", false);
 				},function(reason){
@@ -146,7 +157,6 @@
 			ItemService.getAll()
 				.then(function(data){
 					var itemList = data;
-					getImages(itemList);
 					$scope.itemList = itemList;
 					$scope.toggleMode("loading", false);
 				},function(reason){
@@ -158,8 +168,6 @@
 			switch(mode){
 				case "update":		if(toggle){
 										var itemData = createItemData(item);
-										
-										itemData["imageData"] = item.imageData;
 										$scope.item = itemData;
 									}else{
 										$scope.item = {};
@@ -169,9 +177,9 @@
 									$scope.toggleMode("reqSuccess", false);
 									break;
 				case "remove":		if(toggle){
-										deleteItem = item;
+										$scope.item = item;
 									}else {
-										deleteItem = null;
+										$scope.item = {};
 									}
 									$scope.mode[mode] = toggle;
 									$scope.mode["modal"] = toggle;
@@ -213,47 +221,19 @@
 		};
 		
 		var createItemData = function(item){
-			var itemImage = item.image,
-				itemData = {
-					id: item.id,
-					name: item.name,
-					model: item.model,
-					type: item.type,
-					quantity: item.quantity,
-					price: (item.price ? parseFloat(item.price) : undefined),
-					description: item.description,
-					imageName: item.imageName
-				};
-				
-			if(itemImage){
-				itemData["imageName"] = item.id + "." + itemImage.type.split("/").pop();
-			}
+			var itemData = item;
+			itemData["price"] = (item.price ? parseFloat(item.price) : undefined);
+			itemData["itemImage"] = (item.itemImage || "assets/images/default-item-image.jpg");
 			return itemData;
 		};
 		
 		var uploadItemImage = function(image, item, ItemService){
-			ItemService.uploadImage(image, item.imageName, imageDirName)
+			ItemService.uploadImage(image)
 				.then(function(resp){
 					if(resp.status == 200){
-						item["imageData"] = "data:image/jpeg;base64," + resp.data.base64;
+						item["itemImage"] = "data:image/jpeg;base64," + resp.data.base64;
+						ItemService.update(item);
 					}
-				});
-		};
-		
-		var getImages = function(itemList){
-			for(var i=0; i<itemList.length; i++){
-				if(itemList[i].imageName){
-					getItemImage(itemList[i]);
-				}else{
-					itemList[i]["imageData"] = defaultImagePath;
-				}
-			}
-		};
-		
-		var getItemImage = function(item){
-			ItemService.retrieveImage(item.imageName, imageDirName)
-				.then(function(data){
-					item["imageData"] = "data:image/jpeg;base64," + data.base64;
 				});
 		};
 		

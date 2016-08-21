@@ -1,5 +1,6 @@
 <div id="confirm-panel" class="panel center-align" ng-show="mode.remove">
-	<p>Are you sure you want to remove this item?</p>
+	<p ng-hide="item._recStatus == 'DELETED'">Are you sure you want to remove this item?</p>
+	<p ng-show="item._recStatus == 'DELETED'">Are you sure you want to permanently remove this item?</p>
 	<div class="button-field">
 		<button id="cancelDelBtn" ng-click="toggleMode('remove', false)">No</button>
 		<button id="confirmDelBtn" ng-click="removeItem()">Yes</button>

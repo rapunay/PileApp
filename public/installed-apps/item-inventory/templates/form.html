@@ -61,8 +61,8 @@
 					<div class="panel-content">
 						<input type="file" ngf-select ng-model="item.image" name="file" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
 						<i ng-show="itemForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 1M</i>
-						<img class="thumb" ng-show="(itemForm.file.$valid || item.imageData)" ngf-thumbnail="(item.image || item.imageData)" >
-						<span class="icon remove" ng-click="item.image = null;item.imageName = item.imageData = undefined" ng-show="(item.image || item.imageName)"></span>
+						<img class="thumb" ng-show="(itemForm.file.$valid || item.itemImage)" ngf-thumbnail="(item.image || item.itemImage)" >
+						<span class="icon remove" ng-click="item.image = null;item.itemImage = undefined" ng-show="(item.image || item.itemImage)"></span>
 					</div>
 				</div>
 			</fieldset>
